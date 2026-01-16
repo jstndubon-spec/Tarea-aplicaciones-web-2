@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>R@mType_fan</title>
+    <link rel="icon" type="image/png" href="Logotipo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="Index.html">Inicio</a></li>
+        <li><a href="Biografia.html">Biografía</a></li>
+        <li><a href="Misiones.html">Misiones</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<section class="presentacion">
+    <header>
+        <h1>CONTACTOS</h1>
+    </header>
+
+    <form name="Formulario" action="enviado.html" method="get">    
+        <hr>
+        
+        <label for="nombre">Nombre y apellidos:</label>
+        <input type="text" id="nombre" name="Nombre" placeholder="Nombre y apellidos" required>
+        
+        
+        <label for="genero">Género:</label>
+        <select id="genero" name="Genero">
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select>
+        
+        <br><br>
+        
+        <label for="numero">Número de socio del club de héroes:</label>
+        <input type="number" id="numero" name="Numero" placeholder="Número de socio" required>
+        
+        <hr>
+    
+        <label for="actividad">¿Qué es lo que más te gusta de R@mType?</label>
+        <select name="Actividad" id="actividad">
+            <option value="inteligencia">Su inteligencia</option>
+            <option value="poderes">La forma en la que usa sus poderes</option>
+            <option value="pelea">Su forma de pelear</option>
+            <option value="misterio">Lo misterioso que es</option>
+        </select>
+        
+        <hr>  
+        
+        <label for="satisfaccion">Qué tanto te gusta R@mType:</label>
+        <div class="slider-container">
+            <span>Muy poco (1)</span>
+            <input 
+                type="range" 
+                id="satisfaccion" 
+                name="satisfaccion" 
+                min="1" 
+                max="10" 
+                value="5" 
+                oninput="valorSatisfaccion.value = this.value"
+            >
+            <span>Muchísimo (10)</span>
+            <output id="valorSatisfaccion">5</output>
+        </div>  
+        
+        <hr>
+        
+        
+        <p>¿Te gustaría ver en persona a R@mType?</p>
+        <input type="radio" id="si" name="Respuesta" value="si">
+        <label for="si">Sí</label>
+        <input type="radio" id="no" name="Respuesta" value="no">
+        <label for="no">No</label>
+        
+        <hr>
+        
+        <p>¿En qué evento te gustaría que apareciera?</p>
+        <input type="checkbox" id="concierto" name="Evento" value="concierto">
+        <label for="concierto">En un concierto</label>
+        <input type="checkbox" id="comicon" name="Evento" value="comicon">
+        <label for="comicon">En una comicon</label>
+        <input type="checkbox" id="hospital" name="Evento" value="hospital">
+        <label for="hospital">En un hospital</label>
+        <input type="checkbox" id="tecnocity" name="Evento" value="tecnocity">
+        <label for="tecnocity">En el centro de Tecnocity</label>
+        
+        <hr>
+        
+        
+        <label for="carta">Carta a R@mType:</label><br>
+        <textarea id="carta" name="Carta" rows="10" cols="50"></textarea>
+        
+        <br><br>
+        
+        
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Restaurar">
+    </form>
+</section>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 R@mType_fan — Todos los derechos reservados.</p>
+        <p>Sígueme en mis redes:</p>
+        <ul class="social">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
+

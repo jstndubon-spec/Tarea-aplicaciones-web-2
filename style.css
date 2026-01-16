@@ -1,0 +1,329 @@
+/* ===============================
+   ESTILOS GENERALES
+   =============================== */
+
+body {
+    background: linear-gradient(to right, rgb(63, 131, 163), rgb(15, 116, 102)); /* Fondo degradado */
+    font-family: Arial, sans-serif;      /* Tipo de letra */
+    color: white;                        /* Color de texto general */
+    margin: 0;                           /* Quita los márgenes por defecto */
+    padding: 0;                          /* Quita rellenos por defecto */
+    display: flex;                       /* Permite controlar el footer abajo */
+    flex-direction: column;              /* Acomoda elementos en columna */
+}
+
+html, body {
+    height: 100%;                        /* Permite que el footer se mantenga abajo */
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+
+.navbar {
+    background: linear-gradient(to right, #00eaff, #00b5e5); /* Degradado de la barra */
+    padding: 18px 0;                       /* Espacio interno */
+    box-shadow: 0 0 15px rgba(68, 0, 255, 0.7); /* Brillo  */
+    border-bottom: 2px solid rgba(247, 6, 6, 0.3); /* Borde decorativo abajo */
+    position: sticky;                     
+    top: 0;                               /* Queda pegada arriba */
+    z-index: 100;                          /* Se mantiene sobre otros elementos */
+}
+
+.navbar ul {
+    list-style: none;                     /* Quita puntos de lista */
+    display: flex;                        /* Coloca los elementos en fila */
+    justify-content: center;              /* Centra los enlaces */
+    gap: 180px;                           /* Separación entre botones */
+    margin: 0;                             /* Quita márgenes */
+    padding: 0;                            /* Quita relleno */
+}
+
+.navbar a {
+    text-decoration: none;                /* Quita el subrayado */
+    font-size: 26px;                       /* Tamaño del texto */
+    color: black;                          /* Color inicial */
+    font-weight: 900;                      /* Negrita fuerte */
+    position: relative;                    /* Permite animación en ::after */
+    padding: 8px 12px;                     /* Espacio interno */
+    transition: 0.3s ease;                 /* Animaciones suaves */
+    letter-spacing: 1px;                   /* Espaciado entre letras */
+}
+
+.navbar a::after {
+    content: "";                           /* Línea decorativa */
+    position: absolute;                    /* Colocación exacta */
+    left: 0;                               
+    bottom: -4px;                          /* Alineada bajo el enlace */
+    height: 3px;                           /* Altura de la línea */
+    width: 0;                              /* Inicialmente invisible */
+    background: black;                     /* Color de la línea */
+    box-shadow: 0 0 10px black;            /* Brillo */
+    transition: width 0.3s ease;           /* Animación de expansión */
+}
+
+.navbar a:hover::after {
+    width: 100%;                           /* Efecto subrayado animado */
+}
+
+.navbar a:hover {
+    color: white;                          /* Cambia color al pasar el cursor */
+    text-shadow: 0 0 10px black;           /* Efecto brillo */
+}
+
+/* ===============================
+   IMAGEN
+   =============================== */
+
+   .imagen {
+    display: flex;               /* Usamos flexbox */
+    flex-direction: column;      /* Imagen arriba, pie de foto abajo */
+    align-items: flex-end;       /* Alinea todo a la derecha */
+    max-width: 100%;             /* Evita que se desborde en pantallas pequeñas */
+}
+
+.imagen img {
+    max-width: 100%;             /* Imagen responsive */
+    height: auto;                /* Mantiene proporciones */
+    object-fit: contain;         /* Evita deformaciones si cambian tamaños */
+}
+
+.imagen figcaption {
+    font-size: 14px;             /* Tamaño del texto */
+    color: black;                /* Color del texto */
+    margin-top: 5px;             /* Separación de la imagen */
+    text-align: right;           /* Alinea el pie de foto con la imagen */
+}
+
+/* ===============================
+   PRESENTACIÓN
+   =============================== */
+
+.presentacion {
+    margin-top: 50px;                      /* Espacio superior */
+    color: rgb(0, 0, 0);                   /* Texto oscuro para destacar */
+}
+
+.presentacion h1 {
+    text-align: center;                    /* Centrado */
+    font-size: 60px;                       /* Muy grande */
+    font-weight: 900;                      /* Súper negrita */
+    letter-spacing: 3px;                   /* Separación entre letras */
+    margin-bottom: 10px;                   
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.7); /* Brillo  */
+}
+
+.presentacion h2 {
+    font-size: 32px;                       /* Subtítulo grande */
+    margin-bottom: 15px;
+    color: #00eaff;                        /* Celeste vibrante */
+    text-align: left;                      /* Alineado a la izquierda */
+}
+
+/* ===============================
+   ARTÍCULOS Y CUADROS
+   =============================== */
+
+.article {
+    width: 100%;                           /* Ocupa todo el ancho */
+    display: flex;                         /* Permite uso flexible */
+    justify-content: left;                 /* Alinea el contenido a la izquierda */
+    flex-direction: column;                /* Elementos en columna */
+}
+
+.cuadro {
+    border: 2px solid #00e1ff;             /* Borde celeste */
+    padding: 15px;                         /* Espacio interno */
+    border-radius: 10px;                   /* Bordes redondeados */
+    width: 100%;                           
+    max-width: 800px; 
+    background: rgba(0, 234, 255, 0.2);                     /* Ancho máximo */
+    box-shadow: 0 0 15px #00eaff; 
+}
+
+/* ===============================
+   TABLAS
+   =============================== */
+
+.tabla-container {
+    margin: 40px auto;                     /* Centra la tabla */
+    width: 90%;                            /* Se adapta a pantallas pequeñas */
+    max-width: 900px;
+}
+
+table {
+    width: 100%;                           /* Tabla ocupa todo el ancho */
+    border-collapse: collapse;             /* Unifica bordes */
+    background: rgba(0, 0, 0, 0.3);        /* Fondo translúcido */
+    backdrop-filter: blur(3px);            /* Efecto blur */
+    border: 2px solid #00eaff;             /* Borde */
+    box-shadow: 0 0 15px #00eaff;          /* Brillo */
+    border-radius: 10px;                   /* Bordes redondeados */
+    overflow: hidden;                      /* Evita desbordes */
+}
+
+th {
+    background: #00eaff;                   /* Fondo celeste */
+    color: black;                          /* Letras oscuras */
+    font-size: 22px;                       /* Tamaño del texto */
+    padding: 12px;                         /* Espaciado interno */
+    font-weight: 900;                      /* Negrita fuerte */
+    text-shadow: 0 0 5px white;            /* Brillo */
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* Divisiones suaves */
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);    /* Alterna colores */
+}
+
+tr:hover {
+    background: rgba(0, 234, 255, 0.2);    /* Resalta fila seleccionada */
+    transition: 0.3s ease;
+}
+
+/* ===============================
+   FORMULARIO
+   =============================== */
+
+form {
+    background: rgba(0,0,0,0.3);           /* Fondo translúcido */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;                      /* Máximo ancho */
+    margin: 40px auto;                     /* Centrado */
+    box-shadow: 0 0 15px #00eaff;          /* Brillo */
+}
+
+form label {
+    display: block;                        /* Cada etiqueta en su línea */
+    margin-bottom: 5px;
+    font-weight: bold;                     /* Texto fuerte */
+    color: #00eaff;                        /* Celeste */
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);     /* Suave fondo translúcido */
+    color: white;
+    font-size: 16px;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00eaff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #00b5e5;             /* Cambia color al pasar */
+}
+
+/* ===============================
+   SLIDERS
+   =============================== */
+
+.slider-container {
+    display: flex;                         /* Alinea slider y número */
+    align-items: center;
+    gap: 10px;                             /* Separación */
+    margin-bottom: 20px;
+}
+
+input[type="range"] {
+    flex-grow: 1;                          /* Ocupa espacio restante */
+    -webkit-appearance: none;
+    background: rgba(0,0,0,0.2);
+    height: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #00eaff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+output {
+    font-weight: bold;
+    min-width: 2em;                        /* Mínimo ancho */
+    text-align: center;
+    color: #00eaff;
+}
+
+/* ===============================
+   SEPARADORES
+   =============================== */
+
+hr {
+    height: 5px;
+    width: 50%;
+    background-color: #00eaff;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+footer {
+    background: rgba(0, 0, 0, 0.4);         /* Fondo oscuro translúcido */
+    border-top: 2px solid #00eaff;         /* Línea superior */
+    box-shadow: 0 0 15px #00eaff;          /* Brillo */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;                      /* Mantiene footer abajo */
+    color: white;
+    font-size: 18px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content .social {
+    list-style: none;                      /* Sin puntos */
+    padding: 0;
+    margin-top: 10px;
+    display: flex;                         /* Alineación en fila */
+    justify-content: center;
+    gap: 25px;                             /* Separación entre iconos */
+}
+
+.footer-content .social a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #00eaff;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.footer-content .social a:hover {
+    text-shadow: 0 0 10px #00eaff;         /* Resalta icono */
+}
